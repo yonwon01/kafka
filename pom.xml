@@ -38,21 +38,14 @@
 					<artifactId>jms</artifactId>
 					<groupId>javax.jms</groupId>
 				</exclusion>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-log4j12</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>log4j</groupId>
-					<artifactId>log4j</artifactId>
-				</exclusion>
 			</exclusions>
 		</dependency>
 
+
 	</dependencies>
-
-
-
+	
+	
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -71,6 +64,11 @@
 					<outputDirectory>release</outputDirectory>
 					<finalName>kafka-0.0.1-SNAPSHOT.jar</finalName>
 					<createDependencyReducedPom>true</createDependencyReducedPom>
+					<artifactSet>
+						<excludes>
+							<exclude>org.slf4j:slf4j-log4j12</exclude>
+						</excludes>
+					</artifactSet>
 				</configuration>
 				<executions>
 					<execution>
@@ -83,5 +81,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
+		
 </project>
