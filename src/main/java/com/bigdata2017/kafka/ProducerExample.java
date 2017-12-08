@@ -14,7 +14,9 @@ public class ProducerExample {
 		ProducerConfig producerConfig = new ProducerConfig(props);
 		Producer<String, String> producer = new Producer<String, String>(producerConfig);
 		String hashtag="hashtag!";
-		KeyedMessage<String, String> message = new KeyedMessage<String, String>("test", hashtag);
+		String location="zamsil";
+		String value=hashtag+","+location;
+		KeyedMessage<String, String> message = new KeyedMessage<String, String>("test", value);
 		for(int i=0;i<5;i++) {
 		producer.send(message);}
 		producer.close();
