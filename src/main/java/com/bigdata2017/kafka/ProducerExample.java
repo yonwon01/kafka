@@ -16,7 +16,7 @@ public class ProducerExample {
 		String hashtag="hashtag!";
 		String location="zamsil";
 		String value=hashtag+","+location;
-		KeyedMessage<String, String> message = new KeyedMessage<String, String>("test", value);
+		KeyedMessage<String, String> message = new KeyedMessage<String, String>("Poptok-Topic", value);
 		for(int i=0;i<5;i++) {
 		producer.send(message);}
 		producer.close();
