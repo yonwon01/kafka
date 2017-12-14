@@ -15,7 +15,8 @@ public class ProducerExample {
 		Producer<String, String> producer = new Producer<String, String>(producerConfig);
 		String hashtag="hashtag!";
 		String location="zamsil";
-		String value=hashtag+","+location;
+		String date="20171213";
+		String value=hashtag+","+location+","+date;
 		KeyedMessage<String, String> message = new KeyedMessage<String, String>("Poptok-Topic", value);
 		for(int i=0;i<5;i++) {
 		producer.send(message);}
